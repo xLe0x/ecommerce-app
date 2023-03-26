@@ -88,6 +88,11 @@ function App() {
               <Product />
             </SwiperSlide>
           </Swiper>
+          <div className="products-btn my-12 grid place-content-center">
+            <button className="px-6 py-3 bg-red-500 rounded text-white">
+              View All Products
+            </button>
+          </div>
         </Container>
       </div>
     </main>
