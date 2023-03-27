@@ -11,7 +11,7 @@ export default function Navbar() {
               50%!
             </p>
             <a href="#" className="underline">
-              ShopNow
+              Shop Now
             </a>
           </div>
         </Container>
