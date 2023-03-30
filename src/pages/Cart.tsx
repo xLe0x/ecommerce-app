@@ -11,6 +11,7 @@ export default function Cart() {
       acc += product.price;
       return acc;
     }, 0);
+
   return (
     <div className="flex flex-col max-w-5xl p-6 space-y-4 sm:p-10 mx-auto">
       <h2 className="text-xl font-semibold">

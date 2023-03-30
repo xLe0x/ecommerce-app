@@ -38,7 +38,7 @@ export default function Product(props: {
           <img src="/Wishlist.svg" alt="wishlist-img" />
           <img src="/Eye.svg" alt="eye-img" />
         </div>
-        <div className="bg-[#111] text-white text-center absolute left-0 bottom-0 opacity-0 group-hover:opacity-100 transition-opacity ease-linear w-full rounded-b p-1">
+        <div className="bg-[#111] text-white text-center absolute left-0 bottom-0 opacity-0 group-hover:opacity-100 max-sm:opacity-100 transition-opacity ease-linear w-full rounded-b p-1">
           <button
             className="text-lg font-semibold"
             onClick={() => {
