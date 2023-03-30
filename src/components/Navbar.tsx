@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Container from "./Container";
 
 export default function Navbar() {
+  const cartCount = useSelector((state: any) => state.cart.length);
+
   return (
     <>
       <div className="upper-offer flex justify-between items-center bg-black text-white p-4 max-sm:p-2">
@@ -19,13 +23,12 @@ export default function Navbar() {
       <Container classes="border-b-[1px] border-b-black">
         <nav className="flex items-center justify-between my-4">
           <div className="logo">
-            <h1 className="text-2xl font-bold">Exclusive</h1>
+            <Link to={"/"} className="text-2xl font-bold cursor-pointer">
+              Exclusive
+            </Link>
           </div>
-          <div className="links max-sm:hidden">
+          <div className="links max-md:hidden">
             <ul className="flex items-center justify-between gap-4">
-              <li>
-                <a href="#">Home</a>
-              </li>
               <li>
                 <a href="#">Contact</a>
               </li>
@@ -33,7 +36,10 @@ export default function Navbar() {
                 <a href="#">About</a>
               </li>
               <li>
-                <a href="#">Sign Up</a>
+                <Link to={"/register"}>Sign Up</Link>
+              </li>
+              <li className=" px-2 py-1 rounded">
+                <Link to={"/login"}>Login</Link>
               </li>
             </ul>
           </div>
@@ -59,7 +65,19 @@ export default function Navbar() {
                 width={30}
                 height={30}
               />
-              <img src={"/Cart1.svg"} alt="cart-icon" width={30} height={30} />
+              <Link to={"/cart"} className="cart relative">
+                {cartCount > 0 && (
+                  <p className="bg-red-500 text-white w-6 h-6 rounded-full absolute -top-3 -right-3 text-center">
+                    {cartCount}
+                  </p>
+                )}
+                <img
+                  src={"/Cart1.svg"}
+                  alt="cart-icon"
+                  width={30}
+                  height={30}
+                />
+              </Link>
             </div>
           </div>
         </nav>
